@@ -34,34 +34,23 @@ Antes de começar :checkered_flag:, você precisa ter [Git](https://git-scm.com)
 
 ```bash
 # Clonar este projeto
-$ git clone https://github.com/tiagopierre/portifolio-with-graphcms.git
+$ git clone https://github.com/tiagopierre/to.do-with-react-native.git
 
 # Acessar a pasta
-$ cd portifolio-with-graphcms
+$ cd to.do-with-react-native
 
 # Instalar as dependências 
 $ yarn
 
 # Rodar o projeto
-$ yarn dev
+$ yarn android
 
-# O servidor irá inicializar no <http://localhost:3000>
+# A aplicação irá inicializar no emulador mobile.
 ```
 
 ## 👨🏻‍💻 Deploy da Aplicação
 
-<img src="https://github.com/tiagopierre/portifolio-with-graphcms/blob/main/screen/Grava%C3%A7%C3%A3o%20de%20Tela%202022-04-21%20%C3%A0s%2015.09.33.gif?raw=true" alt="screenshot"/>
-
-🌐 [Deploy da aplicação ](https://bio.tiagopierre.tech/) 
-
-## 📁 Bibliotecas
-
-- [Axios](https://axios-http.com/) 
-- [Codegen](https://www.graphql-code-generator.com/)
-- [Apollo Client](https://www.apollographql.com/docs/react/)
-- [Graphql](https://graphql.org/)
-- [Sass](https://sass-lang.com/)
-
+<img src="https://github.com/tiagopierre/to.do-with-react-native/blob/main/screenshot/emfuncionamento.gif?raw=true" alt="screenshot"/>
 
 ## 📝 Licença
 
