@@ -1,5 +1,5 @@
 <h1 align="center">✅ To.Do React Native</h1>
-<p align="center">Essa será uma aplicação de lembrete de tarefas, para treinar um pouco mais sobre manipulação do estado no React. 🚀</p>
+<p align="center">Essa é uma aplicação de lembrete de tarefas, para treinar um pouco mais sobre manipulação do estado no React. 🚀</p>
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
