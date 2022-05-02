@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 
 import { Header } from "../components/Header";
 import { Task, TasksList } from "../components/TasksList";
@@ -10,13 +10,22 @@ export function Home() {
 
   function handleAddTask(newTaskTitle: string) {
     //TODO - add new task
-    const newTask = {
-      id: new Date().getTime(),
-      title: newTaskTitle,
-      done: false,
-    };
-
-    setTasks([...tasks, newTask]);
+    const task = tasks.find((task) => {
+      return task.title === newTaskTitle;
+    });
+    if (!task) {
+      const newTask = {
+        id: new Date().getTime(),
+        title: newTaskTitle,
+        done: false,
+      };
+      setTasks([...tasks, newTask]);
+    } else {
+      Alert.alert(
+        "Task já cadastrada",
+        "Você não pode cadastrar uma task com o mesmo nome"
+      );
+    }
   }
 
   function handleToggleTaskDone(id: number) {
@@ -24,13 +33,35 @@ export function Home() {
     const newListWithTaskModified = tasks.map((task) =>
       task.id === id ? { ...task, done: !task.done } : task
     );
-
     setTasks(newListWithTaskModified);
   }
 
   function handleRemoveTask(id: number) {
     //TODO - remove task from state
-    setTasks((oldState) => oldState.filter((task) => task.id !== id));
+
+    Alert.alert(
+      "Remover item",
+      "Tem certeza que você deseja remover esse item?",
+      [
+        {
+          text: "Não",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Sim",
+          onPress: () =>
+            setTasks((oldState) => oldState.filter((task) => task.id !== id)),
+        },
+      ]
+    );
+  }
+
+  function handleEditTaks(taskId: number, taskNewTitle: string) {
+    const newListWithTaskModified = tasks.map((task) =>
+      task.id === taskId ? { ...task, title: taskNewTitle } : task
+    );
+    setTasks(newListWithTaskModified);
   }
 
   return (
@@ -43,6 +74,7 @@ export function Home() {
         tasks={tasks}
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask}
+        editTask={handleEditTaks}
       />
     </View>
   );
